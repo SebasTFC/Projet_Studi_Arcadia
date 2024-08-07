@@ -1,0 +1,20 @@
+// Custom.scss
+// Option A: Include all of Bootstrap
+
+// Include any default variable overrides here (though functions won't be available)
+$dark: #02200ff7;
+$secondary:#73a960d8;
+$primary:#07713c;
+$light: rgb(207, 38, 38);
+$danger:#ccec8c;
+$body:rgba(97, 75, 14, 0.8);
+$font-family-sans-serif:"Protest Strike",sans-serif !default;
+$font-family-serif:"Roboto Flex",serif !default;
+$font-family:"Akronim";
+
+$carousel-control-color: $dark;
+
+
+@import "../node_modules/bootstrap/scss/bootstrap.scss";
+
+// Then add additional custom code here

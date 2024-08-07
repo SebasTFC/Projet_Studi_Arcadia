@@ -1,0 +1,106 @@
+@import url("../../node_modules/bootstrap-icons/font/bootstrap-icons.css");
+@import 'custom';
+@import "../../node_modules/bootstrap/dist/css/bootstrap.css";
+
+.logo{
+    width: 70px;
+    height: 70px;
+}
+
+body{
+    background-color: $body;
+}
+
+
+html{
+    position: relative;
+    min-height: 100%;  
+}
+/*
+.centre{
+    margin-bottom: 0px;
+}*/
+
+a> img> .elem :hover {
+    border: 4px solid $primary;
+
+    }
+
+
+.justify{
+    text-align: justify;
+}
+
+footer.foot{
+    padding: 15px;
+    position:absolute;
+    bottom: 0;
+    width: 100%;
+}
+
+h1{
+    font-family: "Akronim";
+    font-size: 60px;
+    color: #baad15d8;
+}
+ h3{
+    text-decoration: underline;
+    font-weight: bold;
+ }
+p,h3,h2,h5,input{
+    font-family: "Roboto Flex";
+}
+
+a,button{
+    font-family: "Protest Strike";
+}
+
+.img_fond_zoo{
+    position: relative;
+    margin-bottom: 15px;
+    &::before{
+        content:"";
+        position: absolute;
+        top:0;
+        left:0;
+        width:100%;
+        height: 100%;
+        background-image: url(./../images/zebre.jpg);
+        background-size:cover;
+        filter:brightness(0.3);
+    }
+    *{
+    position: relative;
+    }
+    .img_fond_zoo_content{
+        height: 300px;
+        display:flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+}
+
+.form-label{
+    color: $dark;
+    font-family: "Roboto Flex";
+}
+
+form{
+    background:transparent;
+}
+
+
+
+.scroll_avis{
+    width: 500px;
+    height: 300px;
+    overflow-y: scroll;
+}
+
+
+
+
+
+
+

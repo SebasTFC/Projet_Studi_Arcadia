@@ -28,16 +28,20 @@ if(isset($_POST['mail'])){
     $dotenv = Dotenv\Dotenv::createUnsafeImmutable(__DIR__.'/../');;
     $dotenv->load();
     // Configure SMTP
+    $phpmailer = new PHPMailer();
+    $phpmailer->isSMTP();
+    $phpmailer->SMTPAuth = true;
     $phpmailer->Host = 'smtp.gmail.com';
     $phpmailer->Port = 587;
-    $phpmailer->Username = 'sebastienescorne@gmail.com';
+    $phpmailer->Username = getenv('ADDRESS_MAIL');
     $phpmailer->Password = getenv('PASSWORD_MAIL');
-    $phpmailer->SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS;
+    //$phpmailer->SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS;
+    $phpmailer->SMTPSecure ="tls";
     
   // Mail Headers
-    $phpmailer->setFrom("sebastienescorne@gmail.com", "sebastienescorne@gmail.com");
+    $phpmailer->setFrom($from, "Expediteur");
     // Change to recipient email. Make sure to use a real email address in your tests to avoid hard bounces and protect your reputation as a sender.
-    $phpmailer->addAddress($from, $from);
+    $phpmailer->addAddress(getenv('ADDRESS_MAIL'), 'Zoo Arcadia');
     $phpmailer->isHTML(true);
     // Message
     $phpmailer->Subject = $subject;

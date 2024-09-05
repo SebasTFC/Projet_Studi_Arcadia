@@ -8,7 +8,9 @@ if(getenv('JAWSDB_URL') !== false) {
     $database = ltrim($dbparts['path'],'/');
 } else {
 //Sinon mode Local
-   $password = '';
+
+   //$password = '';
+   $password = getenv("PSWD");
    $username = 'root';
    $database = 'arcadiazoo';
    $hostname = 'localhost';

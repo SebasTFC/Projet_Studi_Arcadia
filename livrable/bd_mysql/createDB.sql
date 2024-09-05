@@ -1,2 +1,0 @@
--- Active: 1708774293679@@127.0.0.1@3306@php_zoo
-CREATE DATABASE ArcadiaZoo;

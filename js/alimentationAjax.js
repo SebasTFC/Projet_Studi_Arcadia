@@ -26,12 +26,11 @@ $(document).ready(function (){
                             [6, 10,-1],
                             [6, 10, 'Tous'],
                         ],
-                       
                         columnDefs: [
                             {
                                 targets: 1,
-                                render: DataTable.render.datetime('D/MM/YYYY')
-                            } 
+                                render: DataTable.render.datetime('D MM YYYY')
+                            }
                         ],
                        
                         order:[1,'desc'],

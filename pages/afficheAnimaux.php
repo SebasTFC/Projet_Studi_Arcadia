@@ -11,21 +11,21 @@ $id_animal = $_REQUEST['animal'];
        <h1>Les animaux en détail</h1>
     </div>
 </div>
-<div class="centre">
+<!-- <div class="centre"> -->
     <div class="container-fluid">
     <?php
-    $recupServices = $bd->query("SELECT animal.id,animal.prenom,animal.race,animal.image,habitat.nom,habitat.id,visitemedicale.etat_etat,visitemedicale.date_etat,visitemedicale.id_animal,visitemedicale.detail_etat,nourriture.donnee_nou,nourriture.quantite_nou,nourriture.date_nou,nourriture.id_animal FROM `animal`
+    $recupAnimaux = $bd->query("SELECT animal.id,animal.prenom,animal.race,animal.image,habitat.nom,habitat.id,visitemedicale.etat_etat,visitemedicale.date_etat,visitemedicale.id_animal,visitemedicale.detail_etat,nourriture.donnee_nou,nourriture.quantite_nou,nourriture.date_nou,nourriture.id_animal FROM `animal`
     INNER JOIN `habitat` ON animal.id_habitat=habitat.id
     INNER JOIN `visitemedicale` ON animal.id=visitemedicale.id_animal
     INNER JOIN `nourriture` ON animal.id=nourriture.id_animal 
     WHERE animal.id=$id_animal ORDER BY visitemedicale.date_etat DESC, nourriture.date_nou DESC");
-    $animal = $recupServices->fetch();
+    $animal = $recupAnimaux->fetch();
 
         if(empty($animal['etat_etat']) && empty($animal['detail_etat']) && empty($animal['date_nou'])  && empty($animal['donnee_nou'])){
-                $recupServices = $bd->query("SELECT animal.id,animal.prenom,animal.race,animal.image,habitat.nom,habitat.id FROM `animal`
+                $recupAnimaux = $bd->query("SELECT animal.id,animal.prenom,animal.race,animal.image,habitat.nom,habitat.id FROM `animal`
                 INNER JOIN `habitat` ON animal.id_habitat=habitat.id
                 WHERE animal.id=$id_animal");
-                    $animal = $recupServices->fetch();
+                    $animal = $recupAnimaux->fetch();
                     ?>
                     <div class="row mt-5 p-1 bg-dark rounded-5 align-items-center">
                         <div class="col-12 col-lg-6">
@@ -94,10 +94,10 @@ $id_animal = $_REQUEST['animal'];
         <a href="./habitats.php" class="btn btn-primary text-dark">Retour</a>
         <p class="mt-1 text-light">Une vue de plus pour <?= $animal['prenom'] ?>.Merci pour lui!!!</p>
     </div> 
-</div>
+<!-- </div> -->
 
 <?php 
-
+// incrementation de 1 pour la bdd NoSQL
 $prenom=  $animal['prenom']; 
 $document = [
            "name" => $prenom,

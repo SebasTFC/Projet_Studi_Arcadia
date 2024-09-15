@@ -6,23 +6,19 @@ $message="";
 
 try{    
     //$bd = new PDO('mysql:host=localhost;dbname=arcadiaZoo;charset=utf8;','root','');
-    $bd->setAttribute(PDO::ATTR_ERRMODE,PDO::ERRMODE_EXCEPTION);
+    //$bd->setAttribute(PDO::ATTR_ERRMODE,PDO::ERRMODE_EXCEPTION);
     if(isset($_POST["btn-connection"])){
         if(!empty($_POST['email']) AND !empty($_POST['password'])){
-            $token = bin2hex(random_bytes(32));
+            //$token = bin2hex(random_bytes(32));
             $pseudo=htmlspecialchars($_POST['email']);
             $mdp=$_POST['password'];
             $recupUser = $bd->prepare('SELECT * FROM users WHERE email = ? AND password = ?');
             $recupUser->execute(array($pseudo,$mdp));
             if($recupUser->rowcount()>0){
                   
-                //$bdd->exec("UPDATE users SET token='$token' WHERE email = '$pseudo' AND password = '$mdp'");
-                //setcookie('token',$token,time()+3600);
                 $_SESSION['email']= $pseudo;
                 $_SESSION['password']=$mdp;
-                //$_SESSION['role']=$recupUser->fetch()['role'];
-                //$_SESSION['nom']=$recupUser->fetch()['nom'];
-                //$role=$_SESSION['role'];
+                
                 $res = $recupUser->fetchall();
                 $role=$res[0]['role'];
                 $nom=$res[0]['nom'];
@@ -48,7 +44,6 @@ catch(PDOException $e){
         <h1>Connexion</h1>
     </div>
 </div>
-    <div class="centrea">
     <div class="container">
     <form method="POST" action="">
     <div class="row justify-content-center">
@@ -69,7 +64,7 @@ catch(PDOException $e){
         </div>
       </form>  
 </div>
-</div>
+
 <?php
 include_once('footer.php');
 ?>

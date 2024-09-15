@@ -16,7 +16,7 @@ if(isset($_POST['submit_avis'])){
 
 }
 ?>
-<div class="centre">
+<!--<div class="centre">-->
 <div class="img_fond_zoo text-center text-white">
     <div class="img_fond_zoo_content">
         <h1>Donner votre avis sur le zoo</h1>
@@ -52,10 +52,10 @@ if(isset($_POST['submit_avis'])){
                     if(isset($msg)){ echo $msg;}
                 ?>
             </div>
-
+        </div>
     </form>
 </div>
-</div>
+
 <?php
 include_once('footer.php');
 ?>

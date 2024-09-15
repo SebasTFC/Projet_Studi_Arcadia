@@ -9,11 +9,10 @@ require __dir__.'../../vendor/autoload.php'; // Include the MongoDB PHP driver
   else{
   $mongo = new MongoDB\Client("mongodb://localhost:27017/");
   }
-  // Création de la database "db"
+  // Selection de la database "db"
   $db = $mongo->selectDatabase("db");
 
-  // Création de la collection "CompteAnimaux"
+  // Selection de la collection "CompteAnimaux"
   $CompteAnimaux = $db->CompteAnimaux;
-//echo "Connected successfully";
-?>
 
+?>

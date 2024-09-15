@@ -20,8 +20,8 @@ while($habitats = $habitat->fetch()){
         <div class="grid text-center"> 
             <div class="g-col-4 ">
                 <?php
-                    $recupServices = $bd->query("SELECT * FROM animal where id_habitat=$ida");
-                    while($a = $recupServices->fetch()){
+                    $recupHabitats = $bd->query("SELECT * FROM animal where id_habitat=$ida");
+                    while($a = $recupHabitats->fetch()){
                         ?>
                     <a class="elem" href="afficheAnimaux.php?animal=<?= $a['id'] ?>"><img class="m-3" style="width:300px; height:200px;" src="../images/<?= $a['image'] ?>"/a>    
                         <?php

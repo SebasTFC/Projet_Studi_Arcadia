@@ -58,6 +58,11 @@ CREATE TABLE avis (
     validation TINYINT(1) NOT NULL
 );
 
+INSERT INTO avis (id,pseudo,commentaire,date_avis,validation) VALUES
+(1,'Dupont56','Joli zoo avec beaucoup d animaux à voir','2024/03/03',1),
+(2,'Angel','La presence du guide est une super idée','2024/04/09',1);
+
+
 -- Create the horaire table 
 CREATE TABLE horaire (
     id INTEGER NOT NULL AUTO_INCREMENT PRIMARY KEY,
@@ -92,6 +97,11 @@ CREATE TABLE visitemedicale (
     ON UPDATE CASCADE 
 );
 
+INSERT INTO visitemedicale (id_etat,date_etat,etat_etat,detail_etat,id_animal) VALUES
+(1,'2024/03/03','Grande forme','Rien à signaler',1),
+(2,'2024/04/04','Etat à surveiller','Se remet d une rage de dents',2),
+(3,'2024/09/05','Grande forme','Animal en très bonne santé',3);
+
 CREATE TABLE nourriture (
     id_nou INTEGER NOT NULL AUTO_INCREMENT PRIMARY KEY,
     date_nou DATE NOT NULL,
@@ -104,4 +114,9 @@ CREATE TABLE nourriture (
     ON DELETE CASCADE
     ON UPDATE CASCADE
 );
+
+INSERT INTO nourriture (id_nou,date_nou,heure_nou,donnee_nou,quantite_nou,id_animal) VALUES
+(1,'2024/03/03','12:30:00','Viande',2500,1),
+(2,'2024/12/09','14:15:00','Foin',3000,2),
+(3,'2024/06/09','11:02:00','Graines',2000,3);
 

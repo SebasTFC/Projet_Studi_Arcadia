@@ -35,15 +35,14 @@ if(isset($_POST['mail'])){
     $phpmailer->Port = 587;
     $phpmailer->Username = getenv('ADDRESS_MAIL');
     $phpmailer->Password = getenv('PASSWORD_MAIL');
-    //$phpmailer->SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS;
     $phpmailer->SMTPSecure ="tls";
     
-  // Mail Headers
-    $phpmailer->setFrom($from, "Expediteur");
-    // Change to recipient email. Make sure to use a real email address in your tests to avoid hard bounces and protect your reputation as a sender.
+    // Mail Headers
+    //$phpmailer->setFrom('');
     $phpmailer->addAddress(getenv('ADDRESS_MAIL'), 'Zoo Arcadia');
     $phpmailer->isHTML(true);
     // Message
+    $phpmailer->FromName = $from;
     $phpmailer->Subject = $subject;
     $phpmailer->Body    = $content;
   

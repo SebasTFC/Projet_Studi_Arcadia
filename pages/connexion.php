@@ -23,5 +23,4 @@ if(getenv('JAWSDB_URL') !== false) {
         echo "Erreur de connexion.Base de donnée pas trouvée.".$e->getMessage();
     }
 
-
 ?>

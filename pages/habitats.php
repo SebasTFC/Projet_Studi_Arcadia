@@ -24,10 +24,10 @@ include('connexion.php');
                             <div class="col-12 col-lg-4 text-center m-2">
                                 <h3 class="text-decoration-underline text-dark m-3"><?= $habitat['nom'] ?></h3>
                                 <h5 class="m-3 text-primary fst-italic">" <?= $habitat['description'] ?>"</h5>
-                                <a href="tapage.php?ida=<?= $habitat['id'] ?>" class="btn btn-primary text-dark">Animaux de l'habitat</a>
+                                <a href="afficheHabitats.php?ida=<?= $habitat['id'] ?>" class="btn btn-primary text-dark">Animaux de l'habitat</a>
                             </div>
                             <div class="col-12 col-lg-4 m-3">
-                                    <a class="elem" href="tapage.php?ida=<?= $habitat['id'] ?>"><img src="/images/<?= $habitat['image'] ?>" style="width:100%; heigth:100%px;" class="rounded-5 text-center"></a>
+                                    <a class="elem" href="afficheHabitats.php?ida=<?= $habitat['id'] ?>"><img src="/images/<?= $habitat['image'] ?>" style="width:100%; heigth:100%px;" class="rounded-5 text-center"></a>
                             </div>
                         </div>
                         </div>

@@ -1,6 +1,6 @@
 <?php
 include('connexion.php');
-
+// inclusion des horaires dans le footer
 $recupUser = $bd->query('SELECT * FROM horaire');
             $recupUser->execute();
             if($recupUser->rowcount()>0){
@@ -29,6 +29,7 @@ $recupUser = $bd->query('SELECT * FROM horaire');
 
 <body>
     <header>
+      <!-- Barre de navigation -->
       <nav class="navbar navbar-expand-lg bg-dark "data-bs-theme="dark">
         <div class="container-fluid">
           <img class="navbar-brand logo" src="/images/logo_zoo.png" alt="Logo du zoo"/>

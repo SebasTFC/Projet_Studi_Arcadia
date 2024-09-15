@@ -8,7 +8,7 @@ include('header.php');
         <h1>Bienvenue au Zoo ARCADIA </h1>
     </div>
 </div>
-<div class="centrea">
+<!-- <div class="centrea"> -->
 <section>
 <div class="container">
         <div class="row justify-content-center m-4">
@@ -27,19 +27,19 @@ include('header.php');
             <h3 class="text-dark text-center">Le zoo est divisé en plusieurs types d'habitats.</h3>
                 <div class="row rounded-5 align-items-center"> 
                         <div class="col-12 col-lg-4">
-                            <div class="text-center rounded-2  elem">
+                            <div class="text-center rounded-2">
                             <img src="/images/savane.jpg"  style="width: 300px;" alt="Photo de la savane" class="card-img-top rounded-2">
                             </div>
                             <p class="text-center fst-italic mt-2">La savane</p>
                         </div>
                         <div class="col-12 col-lg-4">
-                            <div class="text-center rounded-2 elem">
+                            <div class="text-center rounded-2">
                             <img src="/images/jungle.jpg"  style="width: 300px;" alt="Photo de la jungle"class="card-img-top rounded-2">
                             </div>
                             <p class="text-center fst-italic mt-2">La jungle</p>
                         </div>
                         <div class="col-12 col-lg-4">
-                            <div class="text-center rounded-2 elem">
+                            <div class="text-center rounded-2">
                             <img src="/images/marais.jpg"  style="width: 300px;" alt="Photo des marais"class="card-img-top rounded-2">
                             </div>
                             <p class="text-center fst-italic mt-2">Les marais</p>
@@ -133,7 +133,7 @@ include('header.php');
         </article>
 </section>
 
-</div>
+<!--</div> -->
 <?php
 include('footer.php');
 
